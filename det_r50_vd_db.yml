@@ -3,12 +3,17 @@ Global:
   epoch_num: 7
   log_smooth_window: 20
   print_batch_step: 10
-  save_model_dir: ./output/db_mv3/
-  save_epoch_step: 7
+  save_model_dir: ./output/det_r50_vd/
+  save_epoch_step: 1200
   # evaluation is run every 2000 iterations
-  eval_batch_step: [0, 2000]
+  eval_batch_step: [0,2000]
+  # 1. If pretrained_model is saved in static mode, such as classification pretrained model
+  #    from static branch, load_static_weights must be set as True.
+  # 2. If you want to finetune the pretrained models we provide in the docs,
+  #    you should set load_static_weights as False.
+  load_static_weights: True
   cal_metric_during_train: False
-  pretrained_model: ./pretrain_models/MobileNetV3_large_x0_5_pretrained
+  pretrained_model: ./pretrain_models/ResNet50_vd_ssld_pretrained/
   checkpoints:
   save_inference_dir:
   use_visualdl: False
@@ -20,9 +25,8 @@ Architecture:
   algorithm: DB
   Transform:
   Backbone:
-    name: MobileNetV3
-    scale: 0.5
-    model_name: large
+    name: ResNet
+    layers: 50
   Neck:
     name: DBFPN
     out_channels: 256
@@ -51,7 +55,7 @@ Optimizer:
 PostProcess:
   name: DBPostProcess
   thresh: 0.3
-  box_thresh: 0.6
+  box_thresh: 0.7
   max_candidates: 1000
   unclip_ratio: 1.5
 
@@ -100,7 +104,6 @@ Train:
     drop_last: False
     batch_size_per_card: 8
     num_workers: 8
-    use_shared_memory: False
 
 Eval:
   dataset:
@@ -128,4 +131,3 @@ Eval:
     drop_last: False
     batch_size_per_card: 1 # must be 1
     num_workers: 8
-    use_shared_memory: False

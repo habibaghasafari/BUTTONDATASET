@@ -13,7 +13,7 @@ Global:
   #    you should set load_static_weights as False.
   load_static_weights: True
   cal_metric_during_train: False
-  pretrained_model: ./pretrain_models/ResNet50_vd_ssld_pretrained/
+  pretrained_model: ./pretrain_models/ResNet50_vd_ssld_pretrained
   checkpoints: 
   save_inference_dir:
   use_visualdl: False

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>14</folder>
+	<filename>1445.jpg</filename>
+	<path>/home/li/codeStation/elevator_buttons/images/14/1445.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>528</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>up</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>236</xmin>
+			<ymin>498</ymin>
+			<xmax>310</xmax>
+			<ymax>569</ymax>
+		</bndbox>
+	</object>
+</annotation>

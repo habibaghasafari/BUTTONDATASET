@@ -1,0 +1,26 @@
+<annotation>
+	<folder>4</folder>
+	<filename>491.jpg</filename>
+	<path>/home/dan/Desktop/images/4/491.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>528</width>
+		<height>960</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>down</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>215</xmin>
+			<ymin>467</ymin>
+			<xmax>331</xmax>
+			<ymax>571</ymax>
+		</bndbox>
+	</object>
+</annotation>

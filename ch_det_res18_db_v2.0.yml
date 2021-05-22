@@ -1,10 +1,10 @@
 Global:
   use_gpu: true
-  epoch_num: 7
+  epoch_num: 90
   log_smooth_window: 20
   print_batch_step: 2
-  save_model_dir: ./output/ch_db_res18/
-  save_epoch_step: 5
+  save_model_dir: /content/gdrive/MyDrive/output/
+  save_epoch_step: 1
   # evaluation is run every 5000 iterations after the 4000th iteration
   eval_batch_step: [3000, 2000]
   # 1. If pretrained_model is saved in static mode, such as classification pretrained model
@@ -69,9 +69,9 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./BUTTONDATASET/iros2018/test_set/images/
+    data_dir: ./BUTTONDATASET/iros2018/train_set/images/
     label_file_list:
-      - ./BUTTONDATASET/iros2018/test_set/annotations.txt
+      - ./BUTTONDATASET/iros2018/train_set/annotations.txt
     ratio_list: [1.0]
     transforms:
       - DecodeImage: # load image
@@ -111,9 +111,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./BUTTONDATASET/iros2018/train_set/images/
+    data_dir: ./BUTTONDATASET/iros2018/test_set/images/
     label_file_list:
-      - ./BUTTONDATASET/iros2018/train_set/annotations.txt
+      - ./BUTTONDATASET/iros2018/test_set/annotations.txt
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
